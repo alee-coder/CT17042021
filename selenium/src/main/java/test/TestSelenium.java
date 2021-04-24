@@ -27,6 +27,7 @@ public class TestSelenium {
 		System.setProperty("ebdriver.safari.driver", exePath + "safaridriver");
 		WebDriver driver3 = new SafariDriver();
 		driver3.get("https://my-testing.getclue.com/");
+		//linea nueva de codigo
 
 	}
 
