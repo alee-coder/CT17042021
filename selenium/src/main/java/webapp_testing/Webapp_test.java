@@ -18,20 +18,15 @@ public class Webapp_test {
 		driver.get("https://my-testing.getclue.com/");
 		
 		driver.manage().window().maximize(); //maximizar ventana
+			
+		WebElement phoneNumber = driver.findElement(By.className("phone-input_input__1pOun"));
+		phoneNumber.click();
+		phoneNumber.sendKeys("(333) 666 9999"); // //input[@placeholder="Enter your phone number (required)"]
 		
-		WebElement prefix = driver.findElement(By.className("phone-input_flag_container__ngFMo"));
-		prefix.click();
+		// //*[contains(text(),'Argentina')]
 		
-		//declarando webelement tipo dropdowns
-		Select prefixDropDown = new Select(driver.findElement(By.className("modal_content__1uZru")));
-		prefixDropDown.selectByVisibleText("Canada");
-		
-		
-		//WebElement phoneNumber = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/form/div/div[1]/input"));
-		//phoneNumber.sendKeys("3336669999");
-		
-		//WebElement signInBtn = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/form/button")); 
-		//signInBtn.click();
+		WebElement signInBtn = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/form/button")); 
+		signInBtn.click();
 		
 		//driver.close(); //cierra la ventana actual
 	}

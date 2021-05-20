@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Tarea1 {
 
@@ -42,6 +43,10 @@ public class Tarea1 {
 		WebElement searchBtn = driver.findElement(By.id("searchBtn"));
 		
 		search.sendKeys("Nathan");
+		
+		Select jobTitle = new Select(driver.findElement(By.id("searchDirectory_job_title")));
+		jobTitle.selectByVisibleText("Sales Representative");
+		
 		searchBtn.click();
 		
 		String result = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[2]/td[2]/ul/li[1]")).getText();
